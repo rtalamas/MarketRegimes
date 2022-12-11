@@ -209,22 +209,29 @@ handles = handles + [predictions[0], current]
 joint_prob_ax.ax_joint.legend(handles=handles)
 snp_fig_market_regime = plt.gcf()
 
+start_date = df.index[0].strftime('%Y-%m-%d')
+end = df.index[-1].strftime('%Y-%m-%d')
+
 # Streamlit App
 col1, col2 = st.columns([1, 1])
 col3, col4 = st.columns([1, 1])
 
 with col1:
     st.header('S&P 500 P/E vs CPI By Market Regime')
+    st.caption(f'Dataset includes observations from {start_date} to {end}')
     st.pyplot(snp_fig_market_regime)
 
 with col2:
     st.header('S&P 500 P/E vs CPI Heatmap')
+    st.caption(f'Dataset includes observations from {start_date} to {end}')
     st.pyplot(joint_prob_ax_kde_fig)
 
 with col3:
     st.header('S&P 500 P/E vs CPI 2021-2022 Highlight')
+    st.caption(f'Dataset includes observations from {start_date} to {end}')
     st.pyplot(snp_fig_outlier)
 
 with col4:
     st.header('S&P 500 P/E vs CPI')
+    st.caption(f'Dataset includes observations from {start_date} to {end}')
     st.pyplot(snp_fig)
