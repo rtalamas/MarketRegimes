@@ -277,3 +277,5 @@ yarl==1.8.1
 yfinance==0.1.74
 zipp==3.8.1
 zope.interface==5.5.2
+
+matplotlib==3.5.2
