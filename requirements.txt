@@ -162,7 +162,6 @@ python-dotenv==0.19.2
 python-i18n==0.3.9
 pytrends==4.8.0
 pytz==2022.2.1
-pywin32==302
 pywinpty==2.0.9
 PyYAML==6.0
 qtconsole==5.4.0
