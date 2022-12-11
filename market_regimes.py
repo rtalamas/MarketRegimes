@@ -29,6 +29,34 @@ st.title('Market Regime Dashboard')
 st.caption(
     'built by [@RobertoTalamas](https://twitter.com/RobertoTalamas)')
 
+st.markdown("""## Market Regime Descriptions
+
+### Market Regime 1: Equilibrium
+The Equilibrium market regime has been the prevailing market condition since the 1970s. During this period, the S&P 500 
+has seen steady state upward trends and daily average returns of 1%. Low volatility across asset classes have made 
+investment more reliable and consistent compared to other market regimes. The S&P P/E during this period has been 18x 
+and CPI 2.7%. This period of healthy market conditions has provided a more stable environment for investors to plan 
+their financial goals. 
+
+### Market Regime 2: '08 Recession
+The ‘08 Recession was a period of extreme volatility and uncertainty in the global markets. Equity valuations reached 
+levels that had not been seen since the tech bubble burst, with some stocks reaching as high as 120x their value. 
+Despite this, it is important to remember that this was an outlier compared to other market regimes, making it 
+difficult to generalize these conditions to future states. 
+ 
+### Market Regime 3: Slippery Slope
+The Slippery Slope regime has been seen before in instances such as the dot-com bubble, 2008 recession and the COVID-19 
+recession. During this market regime equities continue to rally, but valuations begin to overextend getting ahead of 
+fundamentals. This regime can also be referred to as a "bubble in the making". 
+The average S&P P/E during this regime is 29x and CPI 3.7%.  
+
+### Market Regime 4: Puffed Up
+The Puffed Up market regime is characterized by high and incredibly volatile inflation. This regime was prevalent 
+during the 1950s and 1970s, and is the only market regime where equity valuations are in the single digits. Those 
+investing in stocks during this time would have seen an average S&P 500 P/E of 9x, while CPI was at 5.6%. 
+This is by all means a scenario we want to avoid when inflation gets out of hand. 
+""")
+
 
 def line_format_year(label):
     """
