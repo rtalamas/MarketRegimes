@@ -1,0 +1,8 @@
+streamlit==1.15.2
+yfinance==0.1.87
+quandl==3.7.0
+numpy==1.23.5
+matplotlib==3.6.2
+seaborn==0.12.1
+fredapi==0.5.0
+joblib==1.1.1
