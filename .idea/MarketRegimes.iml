@@ -5,7 +5,4 @@
     <orderEntry type="jdk" jdkName="Python 3.9 (messari) (2)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
-  <component name="PackageRequirementsSettings">
-    <option name="versionSpecifier" value="Strong equality (==x.y.z)" />
-  </component>
 </module>

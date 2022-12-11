@@ -112,7 +112,6 @@ nbconvert==6.5.4
 nbformat==5.7.0
 notebook==6.5.2
 notebook_shim==0.2.2
-numpy==1.23.4
 oandapyV20==0.6.3
 oauthlib==3.2.2
 onetimepass==1.0.1
@@ -236,3 +235,4 @@ zipp==3.8.1
 zope.interface==5.5.2
 
 matplotlib==3.5.2
+numpy~=1.23.4
