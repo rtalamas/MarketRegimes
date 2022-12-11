@@ -7,6 +7,7 @@ import quandl
 from fredapi import Fred
 
 import numpy as np
+import pandas as pd
 
 import matplotlib.pyplot as plt
 from matplotlib import cm, colors
@@ -66,6 +67,37 @@ def line_format_year(label):
     """
     year = label.year
     return year
+
+
+def plot_in_sample_hidden_states(df, series, log_y=False):
+    """
+    Plot the adjusted closing prices masked by
+    the in-sample hidden states as a mechanism
+    to understand the market regimes.
+    """
+    # Predict the hidden states array
+    labels = df['labels']
+    # Create the correctly formatted plot
+    fig, ax = plt.subplots(figsize=(12, 5))
+
+    colours = ["lawngreen", "darkorange", "darkred", "yellow"]
+    market_regime_labels = ['Equilibrium', '08 Recession', 'Slippery Slope', 'Puffed Up']
+
+    for i, (colour) in enumerate(colours):
+        mask = labels == i
+        ax.plot_date(
+            df.index[mask],
+            df[series][mask],
+            '.', linestyle='none',
+            c=colour,
+            label=market_regime_labels[i]
+        )
+
+    ax.set_title(f"{series} By Market Regime")
+    ax.legend(loc='upper center', ncol=4)
+    if log_y:
+        ax.set_yscale('log')
+    return ax
 
 
 # Generate Datasets
@@ -239,29 +271,116 @@ handles = handles + [predictions[0], current]
 joint_prob_ax.ax_joint.legend(handles=handles)
 snp_fig_market_regime = plt.gcf()
 
-start_date = df.index[0].strftime('%Y-%m-%d')
-end = df.index[-1].strftime('%Y-%m-%d')
+################################################################################
+# S&P 500 by Regime
+################################################################################
+fmt = '$%.0f'
+tick = mtick.FormatStrFormatter(fmt)
+snp_ax = plot_in_sample_hidden_states(df, 'S&P 500')
+snp_ax.yaxis.set_major_formatter(tick)
+snp_by_regime_fig = plt.gcf()
 
+################################################################################
+# CPI  by Regime
+################################################################################
+cpi_ax = plot_in_sample_hidden_states(df, 'CPI')
+cpi_ax.yaxis.set_major_formatter(mtick.PercentFormatter())
+cpi_fig = plt.gcf()
+
+################################################################################
+# S&P 500 P/E by Regime
+################################################################################
+pe_ax = plot_in_sample_hidden_states(df, 'S&P P/E (TTM)')
+pe_fig = plt.gcf()
+
+################################################################################
+# Market Regime Probability
+################################################################################
+regime_probability_df = pd.DataFrame(gmm.predict_proba(df[['S&P P/E (TTM)', 'CPI']]), index=df.index)
+regime_probability_df.columns = market_regime_labels
+
+regime_probability_ax = regime_probability_df.plot(kind='area', color=colours, figsize=(12, 5))
+regime_probability_ax.yaxis.set_major_formatter(mtick.PercentFormatter(1))
+regime_probability_ax.legend(ncol=4, loc='lower center')
+regime_probability_ax.set_title('Highest Probability Market Condition Since The 1950s', fontsize=13)
+regime_probability_ax.margins(x=0, y=0)
+regime_probability_ax.set_ylabel('Market Condition Probability ')
+plt.xticks(ha='center', rotation=0)
+
+regime_prob_fig = plt.gcf()
+
+
+################################################################################
 # Streamlit App
-col1, col2 = st.columns([1, 1])
-col3, col4 = st.columns([1, 1])
+################################################################################
+def get_start_end_dates(series):
+    series_no_na = series.dropna()
+    start = series_no_na.dropna().index[0].strftime('%Y-%m-%d')
+    end = series_no_na.dropna().index[-1].strftime('%Y-%m-%d')
+    return start, end
 
-with col1:
-    st.header('S&P 500 P/E vs CPI By Market Regime')
-    st.caption(f'Dataset includes observations from {start_date} to {end}')
-    st.pyplot(snp_fig_market_regime)
 
-with col2:
-    st.header('S&P 500 P/E vs CPI Heatmap')
-    st.caption(f'Dataset includes observations from {start_date} to {end}')
-    st.pyplot(joint_prob_ax_kde_fig)
+tab_linecharts, tab_scatterplots  = st.tabs(['Market Regimes Through Time', 'Market Regime Clusters'])
 
-with col3:
-    st.header('S&P 500 P/E vs CPI 2021-2022 Highlight')
-    st.caption(f'Dataset includes observations from {start_date} to {end}')
-    st.pyplot(snp_fig_outlier)
+################################################################################
+# Market Regime Through Time By Regime
+################################################################################
+with tab_linecharts:
+    line_chart_col1, line_chart_col2 = st.columns([1, 1])
+    line_chart_col3, line_chart_col4 = st.columns([1, 1])
 
-with col4:
-    st.header('S&P 500 P/E vs CPI')
-    st.caption(f'Dataset includes observations from {start_date} to {end}')
-    st.pyplot(snp_fig)
+    # Market Regime Probability
+    with line_chart_col1:
+        start, end = get_start_end_dates(regime_probability_df['Equilibrium'])
+        st.header('Market Regime Probability')
+        st.caption(f'Dataset includes observations from {start} to {end}')
+        st.pyplot(regime_prob_fig)
+
+    # S&P 500 by Regime
+    with line_chart_col2:
+        start, end = get_start_end_dates(df['S&P 500'])
+        st.header('S&P 500 By Market Regime')
+        st.caption(f'Dataset includes observations from {start} to {end}')
+        st.pyplot(snp_by_regime_fig)
+
+    # CPI by Regime
+    with line_chart_col3:
+        start, end = get_start_end_dates(df['CPI'])
+        st.header('CPI By Market Regime')
+        st.caption(f'Dataset includes observations from {start} to {end}')
+        st.pyplot(cpi_fig)
+
+    # P/E by Regime
+    with line_chart_col4:
+        start, end = get_start_end_dates(df['S&P P/E (TTM)'])
+        st.header('S&P 500 P/E By Market Regime')
+        st.caption(f'Dataset includes observations from {start} to {end}')
+        st.pyplot(pe_fig)
+
+################################################################################
+# Scatterplot Tab
+################################################################################
+with tab_scatterplots:
+    col1, col2 = st.columns([1, 1])
+    col3, col4 = st.columns([1, 1])
+    start, end = get_start_end_dates(df['S&P P/E (TTM)'])
+
+    with col1:
+        st.header('S&P 500 P/E vs CPI By Market Regime')
+        st.caption(f'Dataset includes observations from {start} to {end}')
+        st.pyplot(snp_fig_market_regime)
+
+    with col2:
+        st.header('S&P 500 P/E vs CPI Heatmap')
+        st.caption(f'Dataset includes observations from {start} to {end}')
+        st.pyplot(joint_prob_ax_kde_fig)
+
+    with col3:
+        st.header('S&P 500 P/E vs CPI 2021-2022 Highlight')
+        st.caption(f'Dataset includes observations from {start} to {end}')
+        st.pyplot(snp_fig_outlier)
+
+    with col4:
+        st.header('S&P 500 P/E vs CPI')
+        st.caption(f'Dataset includes observations from {start} to {end}')
+        st.pyplot(snp_fig)
