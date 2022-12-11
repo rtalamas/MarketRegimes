@@ -26,8 +26,10 @@ st.set_page_config(
     layout="wide"
 )
 st.title('Market Regime Dashboard')
-st.caption(
-    'built by [@RobertoTalamas](https://twitter.com/RobertoTalamas)')
+st.caption("""
+Dashboard to track the results from [An Analysis of Market Regimes Through The Inflation Lens](https://docs.google.com/document/d/12FLpksaxR8S8ANWjv09GWell4ZY6jlxP9Mvt2gldIf8/edit?usp=sharing)\n
+built by [@RobertoTalamas](https://twitter.com/RobertoTalamas)
+""")
 
 st.markdown("""## Market Regime Descriptions
 
