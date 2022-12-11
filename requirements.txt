@@ -10,47 +10,37 @@ argon2-cffi==21.3.0
 argon2-cffi-bindings==21.2.0
 ascii-magic==1.6
 astor==0.8.1
-asttokens @ file:///opt/conda/conda-bld/asttokens_1646925590279/work
 async-timeout==4.0.2
 attrs==22.1.0
 Babel==2.11.0
-backcall @ file:///home/ktietz/src/ci/backcall_1611930011877/work
 backoff==2.2.1
 base58==2.1.1
 beartype==0.7.1
 beautifulsoup4==4.11.1
 bleach==5.0.1
 blinker==1.5
-Bottleneck @ file:///C:/Windows/Temp/abs_3198ca53-903d-42fd-87b4-03e6d03a8381yfwsuve8/croots/recipe/bottleneck_1657175565403/work
 bs4==0.0.1
 bt==0.2.9
 cachetools==5.2.0
 ccxt==1.95.43
-certifi @ file:///C:/b/abs_ac29jvt43w/croot/certifi_1665076682579/work/certifi
 cffi==1.15.1
 charset-normalizer==2.1.1
 click==8.1.3
-colorama @ file:///C:/Windows/TEMP/abs_9439aeb1-0254-449a-96f7-33ab5eb17fc8apleb4yn/croots/recipe/colorama_1657009099097/work
 commonmark==0.9.1
 convertdate==2.4.0
 cryptography==38.0.3
 cssselect==1.1.0
-cycler @ file:///tmp/build/80754af9/cycler_1637851556182/work
 Cython==0.29.32
 dateparser==1.1.4
 DateTime==4.7
-debugpy @ file:///C:/ci/debugpy_1637091961445/work
-decorator @ file:///opt/conda/conda-bld/decorator_1643638310831/work
 defusedxml==0.7.1
 degiro-connector==2.0.21
 deprecation==2.1.0
 detecta==0.0.5
 dnspython==2.2.1
-entrypoints @ file:///C:/ci/entrypoints_1649926621128/work
 environment-kernels==1.1.1
 et-xmlfile==1.1.0
 exchange-calendars==4.2.4
-executing @ file:///opt/conda/conda-bld/executing_1646925071911/work
 fake-useragent==0.1.11
 fastjsonschema==2.16.2
 feedparser==6.0.10
@@ -85,13 +75,11 @@ interface-meta==1.3.0
 investiny==0.5.0
 investpy==1.0.8
 ipyflex==0.2.6
-ipykernel @ file:///C:/b/abs_21ykzkm7y_/croots/recipe/ipykernel_1662361803478/work
 ipympl==0.8.8
 ipython==8.5.0
 ipython-genutils==0.2.0
 ipywidgets==7.7.2
 iso8601==0.1.16
-jedi @ file:///C:/ci/jedi_1644315428289/work
 Jinja2==3.1.2
 joblib==1.2.0
 json5==0.9.10
@@ -99,25 +87,19 @@ jsonschema==3.2.0
 jupyter==1.0.0
 jupyter-console==6.4.4
 jupyter-server==1.23.3
-jupyter_client @ file:///C:/ci/jupyter_client_1661836943389/work
-jupyter_core @ file:///C:/b/abs_b8r5lb5eus/croot/jupyter_core_1668084445779/work
 jupyterlab==3.5.0
 jupyterlab-pygments==0.2.2
 jupyterlab-widgets==1.1.1
 jupyterlab_server==2.16.3
-kiwisolver @ file:///C:/ci/kiwisolver_1653292407425/work
 korean-lunar-calendar==0.3.1
 linearmodels==4.27
 loguru==0.6.0
 lxml==4.9.1
 MarkupSafe==2.1.1
-matplotlib @ file:///C:/ci/matplotlib-suite_1660169687702/work
-matplotlib-inline @ file:///C:/ci/matplotlib-inline_1661915841596/work
 mccabe==0.7.0
 messari @ git+https://github.com/messari/messari-python-api-private.git@1d682b29526979d1af0f9fac6bf961787c5f9ca5
 mistune==0.8.4
 mkl-fft==1.3.1
-mkl-random @ file:///C:/ci/mkl_random_1626186184308/work
 mkl-service==2.4.0
 more-itertools==9.0.0
 mplfinance==0.12.9b5
@@ -129,39 +111,30 @@ nbclassic==0.4.8
 nbclient==0.5.13
 nbconvert==6.5.4
 nbformat==5.7.0
-nest-asyncio @ file:///C:/ci/nest-asyncio_1649829929390/work
 notebook==6.5.2
 notebook_shim==0.2.2
-numexpr @ file:///C:/b/abs_a7kbak88hk/croot/numexpr_1668713882979/work
 numpy==1.23.4
 oandapyV20==0.6.3
 oauthlib==3.2.2
 onetimepass==1.0.1
 openbb==0.0.1
 openpyxl==3.0.10
-packaging @ file:///tmp/build/80754af9/packaging_1637314298585/work
-pandas @ file:///C:/b/abs_97pwvlq0kg/croot/pandas_1668631294821/work
 pandas-datareader==0.10.0
 pandas-market-calendars==3.2
 pandas-ta==0.3.14b0
 pandocfilters==1.5.0
 papermill==2.4.0
 parse==1.19.0
-parso @ file:///opt/conda/conda-bld/parso_1641458642106/work
 patsy==0.5.2
-pickleshare @ file:///tmp/build/80754af9/pickleshare_1606932040724/work
 Pillow==9.2.0
 plotly==5.11.0
 ply==3.11
 praw==7.6.1
 prawcore==2.3.0
 prometheus-client==0.15.0
-prompt-toolkit @ file:///tmp/build/80754af9/prompt-toolkit_1633440160888/work
 property-cached==1.6.4
 protobuf==3.20.1
 psaw==0.0.12
-psutil @ file:///C:/Windows/Temp/abs_b2c2fd7f-9fd5-4756-95ea-8aed74d0039flsd9qufz/croots/recipe/psutil_1656431277748/work
-pure-eval @ file:///opt/conda/conda-bld/pure_eval_1646925070566/work
 pyally==1.1.2
 pyarrow==10.0.1
 pycares==4.2.2
@@ -172,24 +145,20 @@ pydeck==0.8.0
 pyee==8.2.2
 pyEX==0.5.0
 pyflakes==3.0.1
-Pygments @ file:///opt/conda/conda-bld/pygments_1644249106324/work
 pyhdfe==0.1.1
 pyluach==2.0.2
 PyMeeus==0.5.11
 pymongo==3.13.0
 Pympler==1.0.1
 pyotp==2.7.0
-pyparsing @ file:///C:/Users/BUILDE~1/AppData/Local/Temp/abs_7f_7lba6rl/croots/recipe/pyparsing_1661452540662/work
 pyppeteer==1.0.2
 PyPrind==2.11.3
 PyQt5==5.15.7
-PyQt5-sip @ file:///C:/Windows/Temp/abs_d7gmd2jg8i/croots/recipe/pyqt-split_1659273064801/work/pyqt_sip
 pyquery==1.4.3
 pyrsistent==0.18.1
 pythclient==0.1.2
 python-binance==1.0.16
 python-coinmarketcap==0.2
-python-dateutil @ file:///tmp/build/80754af9/python-dateutil_1626374649649/work
 python-dotenv==0.19.2
 python-i18n==0.3.9
 pytrends==4.8.0
@@ -198,7 +167,6 @@ pytz-deprecation-shim==0.1.0.post0
 pywin32==302
 pywinpty==2.0.9
 PyYAML==6.0
-pyzmq @ file:///C:/ci/pyzmq_1657615952984/work
 qtconsole==5.4.0
 QtPy==2.3.0
 Quandl==3.7.0
@@ -222,15 +190,12 @@ Send2Trash==1.8.0
 sentiment-investor==2.1.0
 setuptools-scm==6.4.2
 sgmllib3k==1.0.0
-sip @ file:///C:/Windows/Temp/abs_b8fxd17m2u/croots/recipe/sip_1659012372737/work
-six @ file:///tmp/build/80754af9/six_1644875935023/work
 smmap==5.0.0
 sniffio==1.3.0
 socketIO-client-nexus==0.7.6
 soupsieve==2.3.2.post1
 squarify==0.4.3
 sseclient==0.0.27
-stack-data @ file:///opt/conda/conda-bld/stack_data_1646927590127/work
 statsmodels==0.13.2
 stocksera==0.1.21
 streamlit==1.15.1
@@ -243,13 +208,10 @@ thepassiveinvestor==1.0.10
 threadpoolctl==3.1.0
 tinycss2==1.2.1
 tokenterminal==1.0.1
-toml @ file:///tmp/build/80754af9/toml_1616166611790/work
 tomli==2.0.1
 toolz==0.12.0
-tornado @ file:///C:/ci/tornado_1606924294691/work
 tqdm==4.64.1
 tradingview-ta==3.3.0
-traitlets @ file:///tmp/build/80754af9/traitlets_1636710298902/work
 typing_extensions==4.4.0
 tzdata==2022.6
 tzlocal==4.2
@@ -264,7 +226,6 @@ valinvest==0.0.2
 voila==0.3.6
 w3lib==2.0.1
 watchdog==2.1.9
-wcwidth @ file:///Users/ktietz/demo/mc3/conda-bld/wcwidth_1629357192024/work
 webencodings==0.5.1
 websocket-client==1.4.2
 websockets==10.3
