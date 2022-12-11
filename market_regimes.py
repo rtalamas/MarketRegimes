@@ -198,7 +198,7 @@ for i, (colour) in enumerate(colours):
     handles.append(regime_line)
 
 predictions = joint_prob_ax.ax_joint.plot(df['CPI'], preds, linestyle='solid', color='black',
-                                          label='Histortical expected PE given CPI')
+                                          label='Historical expected PE given CPI')
 current = joint_prob_ax.ax_joint.scatter(y=df['S&P P/E (TTM)'].iloc[-1], x=df['CPI'].iloc[-1],
                                          label='Current P/E (TTM)', color='red', marker=".", s=250)
 
