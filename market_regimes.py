@@ -123,7 +123,6 @@ gmm = load('gmm_market_regimes.joblib')
 labels = gmm.predict(df[['S&P P/E (TTM)', 'CPI']])
 df['labels'] = labels
 
-
 ################################################################################
 # P/E vs CPI correlation
 ################################################################################
@@ -324,7 +323,7 @@ def get_start_end_dates(series):
     return start, end
 
 
-tab_linecharts, tab_scatterplots  = st.tabs(['Market Regimes Through Time', 'Market Regime Clusters'])
+tab_linecharts, tab_scatterplots = st.tabs(['Market Regimes Through Time', 'Market Regime Clusters'])
 
 ################################################################################
 # Market Regime Through Time By Regime
@@ -339,6 +338,8 @@ with tab_linecharts:
         st.header('Market Regime Probability')
         st.caption(f'Dataset includes observations from {start} to {end}')
         st.pyplot(regime_prob_fig)
+        st.caption(
+            '[Source Code](https://nbviewer.org/github/rtalamas/MarketRegimes/blob/main/MarketRegimes.ipynb#Market-Regime-Probability)')
 
     # S&P 500 by Regime
     with line_chart_col2:
@@ -346,6 +347,7 @@ with tab_linecharts:
         st.header('S&P 500 By Market Regime')
         st.caption(f'Dataset includes observations from {start} to {end}')
         st.pyplot(snp_by_regime_fig)
+        st.caption('[Source Code](https://nbviewer.org/github/rtalamas/MarketRegimes/blob/main/MarketRegimes.ipynb#S&P-500-By-Market-Regime)')
 
     # CPI by Regime
     with line_chart_col3:
@@ -353,6 +355,7 @@ with tab_linecharts:
         st.header('CPI By Market Regime')
         st.caption(f'Dataset includes observations from {start} to {end}')
         st.pyplot(cpi_fig)
+        st.caption('[Source Code](https://nbviewer.org/github/rtalamas/MarketRegimes/blob/main/MarketRegimes.ipynb#CPI-By-Market-Regime)')
 
     # P/E by Regime
     with line_chart_col4:
@@ -360,6 +363,7 @@ with tab_linecharts:
         st.header('S&P 500 P/E By Market Regime')
         st.caption(f'Dataset includes observations from {start} to {end}')
         st.pyplot(pe_fig)
+        st.caption('[Source Code](https://nbviewer.org/github/rtalamas/MarketRegimes/blob/main/MarketRegimes.ipynb#S&P-500-P/E-By-Market-Regime)')
 
 ################################################################################
 # Scatterplot Tab
@@ -373,18 +377,22 @@ with tab_scatterplots:
         st.header('S&P 500 P/E vs CPI By Market Regime')
         st.caption(f'Dataset includes observations from {start} to {end}')
         st.pyplot(snp_fig_market_regime)
+        st.caption('[Source Code](https://nbviewer.org/github/rtalamas/MarketRegimes/blob/main/MarketRegimes.ipynb#S&P-500-P/E-vs-CPI-By-Market-Regime)')
 
     with col2:
         st.header('S&P 500 P/E vs CPI Heatmap')
         st.caption(f'Dataset includes observations from {start} to {end}')
         st.pyplot(joint_prob_ax_kde_fig)
+        st.caption('[Source Code](https://nbviewer.org/github/rtalamas/MarketRegimes/blob/main/MarketRegimes.ipynb#S&P-500-P/E-vs-CPI-Heatmap)')
 
     with col3:
         st.header('S&P 500 P/E vs CPI 2021-2022 Highlight')
         st.caption(f'Dataset includes observations from {start} to {end}')
         st.pyplot(snp_fig_outlier)
+        st.caption('[Source Code](https://nbviewer.org/github/rtalamas/MarketRegimes/blob/main/MarketRegimes.ipynb#S&P-500-P/E-vs-CPI)')
 
     with col4:
         st.header('S&P 500 P/E vs CPI')
         st.caption(f'Dataset includes observations from {start} to {end}')
         st.pyplot(snp_fig)
+        st.caption('[Source Code](https://nbviewer.org/github/rtalamas/MarketRegimes/blob/main/MarketRegimes.ipynb#S&P-500-P/E-vs-CPI)')
