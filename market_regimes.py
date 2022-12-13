@@ -10,12 +10,10 @@ import numpy as np
 import pandas as pd
 
 import matplotlib.pyplot as plt
-from matplotlib import cm, colors
-from matplotlib.dates import YearLocator, MonthLocator
 import matplotlib.ticker as mtick
 import seaborn as sns
 
-from joblib import dump, load
+from joblib import load
 
 quandl.ApiConfig.api_key = 'n-JBokomw9UHXTsb1s-j'
 
@@ -125,7 +123,10 @@ gmm = load('gmm_market_regimes.joblib')
 labels = gmm.predict(df[['S&P P/E (TTM)', 'CPI']])
 df['labels'] = labels
 
+
+################################################################################
 # P/E vs CPI correlation
+################################################################################
 corr_ax = df['S&P P/E (TTM)'].rolling(12 * 10).corr(df['CPI']).plot(figsize=(9, 5), color='black')
 corr_ax.set_title('10-year Rolling Correlation: S&P P/E (TTM) vs CPI', fontsize=13)
 corr_ax.set_ylabel('Correlation')
@@ -139,7 +140,9 @@ corr_ax.legend(handles=[pos, neg], loc='upper center', ncol=2)
 plt.xticks(rotation=0, ha='center')
 corr_fig = plt.gcf()
 
-# P/E vs CPI Correlation Spike
+################################################################################
+# P/E vs CPI correlation
+################################################################################
 corr_ax_spike = df['S&P P/E (TTM)'].rolling(12 * 10).corr(df['CPI']).plot(figsize=(9, 5), color='black')
 peak_correlation = round(df['S&P P/E (TTM)'].rolling(12 * 10).corr(df['CPI']).max(), 2)
 
@@ -273,7 +276,8 @@ snp_fig_market_regime = plt.gcf()
 
 ################################################################################
 # S&P 500 by Regime
-################################################################################
+####################################################################
+# ############
 fmt = '$%.0f'
 tick = mtick.FormatStrFormatter(fmt)
 snp_ax = plot_in_sample_hidden_states(df, 'S&P 500')
