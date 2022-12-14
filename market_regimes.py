@@ -79,7 +79,7 @@ def plot_in_sample_hidden_states(df, series, log_y=False):
     fig, ax = plt.subplots(figsize=(12, 5))
 
     colours = ["lawngreen", "darkorange", "darkred", "yellow"]
-    market_regime_labels = ['Equilibrium', '08 Recession', 'Slippery Slope', 'Puffed Up']
+    market_regime_labels = ['Equilibrium', 'The Global Crash', 'Playing With Fire', 'Inflation']
 
     for i, (colour) in enumerate(colours):
         mask = labels == i
