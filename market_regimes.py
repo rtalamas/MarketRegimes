@@ -243,7 +243,7 @@ joint_prob_ax_kde_fig = plt.gcf()
 ################################################################################
 # Plotting
 colours = ["lawngreen", "darkorange", "darkred", "yellow"]
-market_regime_labels = ['Equilibrium', '08 Recession', 'Slippery Slope', 'Puffed Up']
+market_regime_labels = ['Equilibrium', 'The Global Crash', 'Playing With Fire', 'Inflation']
 
 joint_prob_ax = sns.jointplot(data=df, x="CPI", y='S&P P/E (TTM)', height=8, hue='labels', joint_kws={"s": 1})
 joint_prob_ax.ax_joint.xaxis.set_major_formatter(mtick.PercentFormatter())
