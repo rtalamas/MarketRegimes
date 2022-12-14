@@ -39,19 +39,19 @@ investment more reliable and consistent compared to other market regimes. The S&
 and CPI 2.7%. This period of healthy market conditions has provided a more stable environment for investors to plan 
 their financial goals. 
 
-### Market Regime 2: '08 Recession
-The ‘08 Recession was a period of extreme volatility and uncertainty in the global markets. Equity valuations reached 
-levels that had not been seen since the tech bubble burst, with some stocks reaching as high as 120x their value. 
-Despite this, it is important to remember that this was an outlier compared to other market regimes, making it 
-difficult to generalize these conditions to future states. 
+### Market Regime 2: The Global Crash
+The Global Crash regime was a period of extreme volatility and uncertainty in the global markets and is associated 
+with the ‘08 financial crisis. Equity valuations reached levels that had not been seen since the tech bubble burst, 
+with some stocks reaching as high as 120x their value. Despite this, it is important to remember that this was an 
+outlier compared to other market regimes, making it difficult to generalize these conditions to future states.  
  
-### Market Regime 3: Slippery Slope
+### Market Regime 3: Playing With Fire
 The Slippery Slope regime has been seen before in instances such as the dot-com bubble, 2008 recession and the COVID-19 
 recession. During this market regime equities continue to rally, but valuations begin to overextend getting ahead of 
 fundamentals. This regime can also be referred to as a "bubble in the making". 
 The average S&P P/E during this regime is 29x and CPI 3.7%.  
 
-### Market Regime 4: Puffed Up
+### Market Regime 4: Inflation
 The Puffed Up market regime is characterized by high and incredibly volatile inflation. This regime was prevalent 
 during the 1950s and 1970s, and is the only market regime where equity valuations are in the single digits. Those 
 investing in stocks during this time would have seen an average S&P 500 P/E of 9x, while CPI was at 5.6%. 
